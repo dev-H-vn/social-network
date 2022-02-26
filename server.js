@@ -54,6 +54,12 @@ mongoose.connect(
   }
 );
 
+app.use(express.static(path.join(__dirname, "build")));
+
+app.get("/*", (req, res) => {
+  res.sendFile(path.join(__dirname, "build", "index.html"));
+});
+
 // post
 const POST = 5000 || process.env.POST;
 http.listen(POST, (req, res) => {
