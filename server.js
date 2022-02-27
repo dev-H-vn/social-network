@@ -54,12 +54,13 @@ mongoose.connect(
   }
 );
 
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static("client/build"));
-  app.get("*", (req, res) => {
-    res.sendFile(path.join(__dirname, "client", "build", "index.html"));
-  });
-}
+var distDir = __dirname + "/dist/";
+
+app.use(express.static(distDir));
+app.use(express.static("client/build"));
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "client", "build", "index.html"));
+});
 
 // post
 const POST = process.env.POST || 3000;
