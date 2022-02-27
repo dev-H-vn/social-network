@@ -63,5 +63,5 @@ app.get("*", (req, res) => {
 // post
 
 http.listen(process.env.PORT || 3000, (req, res) => {
-  console.log("run post ", POST);
+  console.log("BE is running");
 });
