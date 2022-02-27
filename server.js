@@ -61,7 +61,7 @@ app.get("/*", (req, res) => {
 });
 
 // post
-const POST = 5000 || process.env.POST;
+const POST = process.env.POST || 5000;
 http.listen(POST, (req, res) => {
   console.log("run post ", POST);
 });
