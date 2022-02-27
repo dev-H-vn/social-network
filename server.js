@@ -54,16 +54,14 @@ mongoose.connect(
     console.log("connected MONGODB !");
   }
 );
+app.use(express.static(path.join(__dirname, "/client/build")));
 
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static("client/build"));
-  app.get("*", (req, res) => {
-    res.sendFile(path.join(__dirname, "client", "build", "index.html"));
-  });
-}
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "/client/build", "index.html"));
+});
 
 // post
-const POST = process.env.POST || 3000;
-http.listen(POST, (req, res) => {
+
+http.listen(process.env.PORT || 3000, (req, res) => {
   console.log("run post ", POST);
 });
