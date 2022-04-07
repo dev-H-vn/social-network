@@ -70,6 +70,7 @@ app.get("/", function (req, res) {
 //   res.sendFile("index.html", { root: "public" });
 // });
 
-http.listen(process.env.PORT || 3000, (req, res) => {
-  console.log("BE is running");
+const PORT = process.env.PORT || 5000;
+http.listen(PORT, (req, res) => {
+  console.log("BE is running ", PORT);
 });
