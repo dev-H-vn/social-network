@@ -1,0 +1,156 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+  box-sizing: border-box;
+}
+body {
+  width: 100%;
+  background-color: rgb(240, 242, 245);
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+a:hover {
+  text-decoration: underline;
+  color: black;
+}
+.a_none:hover {
+  text-decoration: none;
+  color: black;
+}
+
+hr {
+  margin: 0;
+  padding: 0;
+}
+.flex_center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.toast_fix {
+  width: 350px;
+  max-width: 100%;
+  font-size: 0.875rem;
+  background-color: rgba(255, 255, 255);
+  background-clip: padding-box;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+.toast_app_in {
+  position: fixed;
+  top: 50px;
+  right: 10px;
+  z-index: 1000;
+  animation: animationToastIn ease-out 0.5s;
+}
+.toast_app_out {
+  position: fixed;
+  top: 50px;
+  right: -400px;
+  z-index: 1000;
+  animation: animationToastOut ease-in 0.5s;
+}
+
+@keyframes animationToastIn {
+  from {
+    top: 50px;
+    right: -400px;
+  }
+  to {
+    top: 50px;
+    right: 10px;
+  }
+}
+@keyframes animationToastOut {
+  from {
+    top: 50px;
+    right: 10px;
+  }
+  to {
+    top: 50px;
+    right: -400px;
+  }
+}
+.show_listUser {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 888;
+}
+.show_listUser ul {
+  width: 300px;
+  height: 300px;
+  background-color: white;
+  background-color: rgb(240, 242, 245);
+  border-radius: 10px;
+  padding: 10px 15px;
+  overflow: hidden;
+  overflow-y: auto;
+  animation: animation-delay ease-in 0.3s;
+}
+.show_listUser ul li:nth-child(2) {
+  margin-top: 30px;
+}
+.sidebarFriend {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 8px 0;
+}
+.sidebarFriendImg {
+}
+.sidebarFriendName {
+}
+.buttonc_close {
+  position: absolute;
+  top: -10px;
+  right: 10px;
+  color: orangered;
+  font-size: 33px;
+  font-weight: bold;
+  cursor: pointer;
+}
+@keyframes animation-delay {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@import url("./home.css");
+@import url("./topbar.css");
+@import url("./sidebar.css");
+@import url("./rightbar.css");
+@import url("./feed.css");
+@import url("./closefriend.css");
+@import url("./share.css");
+@import url("./online.css");
+@import url("./profile.css");
+@import url("./login.css");
+@import url("./loading.css");
+@import url("./message.css");
+@import url("./sidebarChat.css");
+@import url("./feedchat.css");
+@import url("./rightbarchar.css");
+@import url("./postSingle.css");
+@import url("./addUserCvst.css");
+@import url("./Comment.css");
+@import url("./editProfile.css");
+@import url("./information.css");
+.carousel-control-next,
+.carousel-control-prev {
+  z-index: auto;
+}
+.post_imgLegth {
+  z-index: auto;
+}
