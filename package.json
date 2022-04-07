@@ -27,6 +27,5 @@
     "nodemon": "^2.0.15",
     "socket.io": "^4.4.0"
   },
-  "type": "module",
-  "proxy": "https://social-devh.herokuapp.com"
+  "type": "module"
 }
