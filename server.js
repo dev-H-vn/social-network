@@ -55,14 +55,14 @@ mongoose.connect(
   }
 );
 
-// // ... other app.use middleware
-// app.use(express.static(path.join(__dirname, "client", "build")));
+// ... other app.use middleware
+app.use(express.static(path.join(__dirname, "client", "build")));
 
-// // ...
-// // Right before your app.listen(), add this:
-// app.get("*", (req, res) => {
-//   res.sendFile(path.join(__dirname, "client", "build", "index.html"));
-// });
+// ...
+// Right before your app.listen(), add this:
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "client", "build", "index.html"));
+});
 
 http.listen(process.env.PORT || 3000, (req, res) => {
   console.log("BE is running");
