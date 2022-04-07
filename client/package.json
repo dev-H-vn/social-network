@@ -45,5 +45,5 @@
     ]
   },
   "type": "module",
-  "proxy": "http://localhost:3000"
+  "proxy": "https://social-devh.herokuapp.com"
 }
