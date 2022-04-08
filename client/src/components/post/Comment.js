@@ -6,11 +6,11 @@ function Comment({ post }) {
   const [isReadMore, setIsReadMore] = useState(false);
   return (
     <>
-      {post.comments.map((comment, index) =>
+      {post.comments.map((comment, key) =>
         isReadMore ? (
-          <CommentDisplay post={post} comment={comment} />
+          <CommentDisplay key={key} post={post} comment={comment} />
         ) : (
-          index < 3 && <CommentDisplay post={post} comment={comment} />
+          key < 3 && <CommentDisplay key={key} post={post} comment={comment} />
         )
       )}
       <span

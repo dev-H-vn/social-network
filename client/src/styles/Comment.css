@@ -41,7 +41,7 @@
 }
 .comment_display_info {
   display: flex;
-  justify-content: start;
+  justify-content: center;
   align-items: center;
 }
 .comment_display_img {
@@ -56,7 +56,7 @@
 .comment_display_footer {
   width: 95%;
   display: flex;
-  justify-content: start;
+  justify-content: center;
   flex-direction: column;
   background-color: rgb(240, 242, 245);
   padding: 5px;

@@ -152,7 +152,7 @@ function FeedChat({
               <>
                 {auth.user._id === msg?.sender ? (
                   <>
-                    <div className={`${index > 0 && "d-none"}`}>
+                    <div key={index} className={`${index > 0 && "d-none"}`}>
                       {conversation.loading ? (
                         <span className="statusSend">
                           {/* <i class="far fa-check-circle"></i> */}
@@ -163,7 +163,7 @@ function FeedChat({
                           />
                         </span>
                       ) : (
-                        <span className="statusSend">
+                        <span key={index} className="statusSend">
                           {/* <i class="fas fa-check-circle"></i> */}
                         </span>
                       )}
