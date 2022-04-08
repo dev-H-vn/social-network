@@ -69,7 +69,6 @@ app.get("*", (req, res) => {
   res.sendFile("index.html", { root: "public" });
 });
 
-const PORT = process.env.PORT || 5000;
-http.listen(PORT, (req, res) => {
+http.listen(process.env.PORT || 3000, (req, res) => {
   console.log("BE is running ", PORT);
 });
