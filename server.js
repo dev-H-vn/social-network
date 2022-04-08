@@ -7,7 +7,12 @@ import morgan from "morgan";
 import mongoose from "mongoose";
 import cookieParser from "cookie-parser";
 import helmet from "helmet";
+import { fileURLToPath } from "url";
 import path from "path";
+import { dirname } from "path";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 const app = express();
 
@@ -60,9 +65,9 @@ app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "./client/build/index.html"));
 });
 
-app.get("*", (req, res) => {
-  res.sendFile("index.html", { root: "public" });
-});
+// app.get("*", (req, res) => {
+//   res.sendFile("index.html", { root: "public" });
+// });
 
 http.listen(process.env.PORT || 3000, (req, res) => {
   console.log("BE is running ", process.env.PORT || 3000);
