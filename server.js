@@ -70,5 +70,5 @@ app.get("*", (req, res) => {
 });
 
 http.listen(process.env.PORT || 3000, (req, res) => {
-  console.log("BE is running ", PORT);
+  console.log("BE is running ", process.env.PORT || 3000);
 });
