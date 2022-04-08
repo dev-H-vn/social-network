@@ -7,12 +7,7 @@ import morgan from "morgan";
 import mongoose from "mongoose";
 import cookieParser from "cookie-parser";
 import helmet from "helmet";
-import { fileURLToPath } from "url";
 import path from "path";
-import { dirname } from "path";
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
 
 const app = express();
 
