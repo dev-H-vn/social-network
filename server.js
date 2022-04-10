@@ -7,8 +7,8 @@ import morgan from "morgan";
 import mongoose from "mongoose";
 import cookieParser from "cookie-parser";
 import helmet from "helmet";
-import { fileURLToPath } from "url";
 import path from "path";
+import { fileURLToPath } from "url";
 import { dirname } from "path";
 
 const __filename = fileURLToPath(import.meta.url);
@@ -60,15 +60,15 @@ mongoose.connect(
   }
 );
 
-app.use(express.static(path.join(__dirname, "./client/build")));
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "./client/build/index.html"));
-});
+//deploy;
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("client/build"));
+  app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "./client", "build", "index.html"));
+  });
+}
+const PORT = process.env.PORT || 5000;
 
-app.get("*", (req, res) => {
-  res.sendFile("index.html", { root: "public" });
-});
-
-http.listen(process.env.PORT || 3000, (req, res) => {
-  console.log("BE is running ", process.env.PORT || 3000);
+http.listen(PORT, (req, res) => {
+  console.log("BE is running ", PORT);
 });
